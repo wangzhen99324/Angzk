@@ -6,6 +6,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.wz.business.user.model.Msg;
 
+/**
+ * 
+ * @author Angzk
+ *
+ */
 @Controller
 @RequestMapping("home")
 public class HomeController {
