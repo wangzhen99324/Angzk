@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" 
+	"http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+	<!-- MYSQL -->
+	<classPathEntry
+		location="G:\eclipse\Repository\mysql\mysql-connector-java\5.1.30\mysql-connector-java-5.1.30.jar" />
+
+	<context id="Angzk" targetRuntime="MyBatis3">
+
+		<plugin type="org.mybatis.generator.plugins.CaseInsensitiveLikePlugin"></plugin>
+		<plugin type="org.mybatis.generator.plugins.SerializablePlugin"></plugin>
+		<!-- 增加分页处理 -->
+		<plugin type="com.wz.bean.mybatis.plugins.MysqlPaginationPlugin"></plugin>
+
+		<commentGenerator>
+			<property name="suppressDate" value="true" />
+		</commentGenerator>
+		<!-- MYSQL -->
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			userId="root" password="1234"
+			connectionURL="jdbc:mysql://localhost:3306/test7" />
+
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+
+		<!-- bean 实体类 生成包 -->
+		<javaModelGenerator targetPackage="com.wz.model"
+			targetProject="./src/main/java/" />
+		<!-- mybatis Sql配置文件 -->
+		<sqlMapGenerator targetPackage="mapper"
+			targetProject="./src/main/resources/" />
+		<!-- mapper Dao接口类 -->
+		<javaClientGenerator targetPackage="com.wz.mapper"
+			targetProject="./src/main/java/" type="XMLMAPPER" />
+
+<!-- 		<table tableName="biz_etc_order_record" domainObjectName="EtcBankRecord"> -->
+<!-- 			<columnOverride column="amount" javaType="java.lang.Long"></columnOverride> -->
+<!--  			<columnOverride column="time_expire" javaType="java.lang.Long"></columnOverride>  -->
+<!-- 			<columnOverride column="time_paid" javaType="java.lang.Long"></columnOverride>  -->
+<!-- 			<columnOverride column="create_time" javaType="java.lang.Long"></columnOverride> -->
+<!-- 		</table> -->
+<!-- 		<table tableName="biz_etcqd_order_record" domainObjectName="EtcqdRecord"> -->
+<!-- 			<columnOverride column="create_time" javaType="java.lang.String"></columnOverride> -->
+<!-- 			<columnOverride column="amount" javaType="java.lang.Long"></columnOverride> -->
+<!-- 		</table> -->
+		<table tableName="b_stu" domainObjectName="Bstu">
+<!-- 			<columnOverride column="amount" javaType="java.lang.Double"></columnOverride> -->
+<!-- 			<columnOverride column="time_paid" javaType="java.lang.Long"></columnOverride> -->
+<!-- 			<columnOverride column="create_time" javaType="java.lang.Long"></columnOverride> -->
+		</table>
+
+	</context>
+
+</generatorConfiguration>
+
